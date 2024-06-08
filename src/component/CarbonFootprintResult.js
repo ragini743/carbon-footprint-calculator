@@ -3,7 +3,7 @@ import React from 'react';
 
 const CarbonFootprintResult = ({ result }) => {
   return (
-    <div>
+    <div> 
       <h2>Your Carbon Footprint</h2>
       <p>Electricity: {result.electricity} kg CO2</p>
       <p>Gas: {result.gas} kg CO2</p>

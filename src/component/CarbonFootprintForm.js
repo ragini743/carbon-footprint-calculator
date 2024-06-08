@@ -22,9 +22,9 @@ const CarbonFootprintForm = ({ onCalculate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Electricity Usage (kWh):</label>
+    <form onSubmit={handleSubmit} >
+      <div className='border-[2px] border-gray-100 p-2 '>
+        <label className='font-bold'>Electricity Usage (kWh):</label>
         <input
           type="number"
           name="electricity"

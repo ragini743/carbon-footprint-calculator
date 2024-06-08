@@ -31,8 +31,8 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <h1>Carbon Footprint Calculator</h1>
+    <div className="App md:w-[40%] mx-auto mt-16 shadow-lg border-[1px] border-gray-100 p-4">
+      <h1  className='font-bold text-xl md:text-2xl text-center mb-4'>Carbon Footprint Calculator</h1>
       <CarbonFootprintForm onCalculate={calculateCarbonFootprint} />
       {result && <CarbonFootprintResult result={result} />}
     </div>
