@@ -44,7 +44,7 @@ const CarbonFootprintForm = ({ onCalculate }) => {
         />
       </div>
       <div>
-        <label>Water Usage (gallons):</label>
+        <label>Water Usage ({formData.waterUnit}):</label>
         <input
           type="number"
           name="water"
@@ -52,6 +52,10 @@ const CarbonFootprintForm = ({ onCalculate }) => {
           onChange={handleChange}
           required
         />
+         <select name="waterUnit" value={formData.waterUnit} onChange={handleChange}>
+          <option value="gallons">Gallons</option>
+          <option value="liters">Liters</option>
+        </select>
       </div>
       <div>
         <label>Travel (miles):</label>
