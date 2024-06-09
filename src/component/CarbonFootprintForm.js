@@ -34,7 +34,7 @@ const CarbonFootprintForm = ({ onCalculate }) => {
       <div className='border-[2px]
        border-gray-100 p-4 mb-4 input-container relative'>
         <label className='font-bold'>Electricity Usage (kWh):</label>
-        <input className='outline-none relative'
+        <input className='outline-none relative ml-4'
           type="number"
           name="electricity"
           value={formData.electricity}
@@ -46,9 +46,9 @@ const CarbonFootprintForm = ({ onCalculate }) => {
      
      
       <div className='border-[2px]
-       border-gray-100 p-2 mb-4 input-container relative '>
+       border-gray-100 p-4 mb-4 input-container relative '>
         <label className='font-bold'>Water Usage ({formData.waterUnit}):</label>
-        <input className='outline-none'
+        <input className='outline-none ml-4'
           type="number"
           name="water"
           value={formData.water}
@@ -63,9 +63,9 @@ const CarbonFootprintForm = ({ onCalculate }) => {
         
       </div>
       <div  className='border-[2px]
-       border-gray-100 p-2 mb-4 input-container relative'>
+       border-gray-100 p-4 mb-4 input-container relative'>
       <label className='font-bold'>LPG ({formData.lpgUnit}):</label>
-        <input className='outline-none'
+        <input className='outline-none ml-4'
           type="number"
           name="lpg"
           value={formData.lpg}
@@ -80,9 +80,9 @@ const CarbonFootprintForm = ({ onCalculate }) => {
        
       </div>
       <div className='border-[2px]
-       border-gray-100 p-2 mb-4 input-container relative'>
+       border-gray-100 p-4 mb-4 input-container relative'>
         <label className='font-bold'>Travel (miles):</label>
-        <input className='outline-none'
+        <input className='outline-none ml-4'
           type="number"
           name="travel"
           value={formData.travel}
