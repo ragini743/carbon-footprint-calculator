@@ -15,6 +15,13 @@ const App = () => {
     lpg: "",
     lpgUnit: "kilograms",
     travel: "",
+    petrol: '',
+    diesel: '',
+    autoLpg: '',
+    taxis: '',
+    bus: '',
+    autorickshaw: '',
+    train: ''
   });
 
   const calculateCarbonFootprint = (data) => {
@@ -27,6 +34,13 @@ const App = () => {
     const waterFactorGallons = 0.002; // kg CO2 per gallon
     const waterFactorLiters = 0.000528; // kg CO2 per liter
     const travelFactor = 0.411; // kg CO2 per mile
+    const petrolFactor = 2.31; // kg CO2 per liter
+    const dieselFactor = 2.68; // kg CO2 per liter
+    const autoLpgFactor = 1.51; // kg CO2 per liter (assuming same as LPG)
+    const taxiFactor = 0.18; // kg CO2 per km
+    const busFactor = 0.10; // kg CO2 per km
+    const autorickshawFactor = 0.05; // kg CO2 per km
+    const trainFactor = 0.06; // kg CO2 per km
 
     const electricityCO2 = data.electricity * electricityFactor;
     const LPGCO2 =
@@ -35,8 +49,15 @@ const App = () => {
       data.water *
       (data.waterUnit === "gallons" ? waterFactorGallons : waterFactorLiters);
     const travelCO2 = data.travel * travelFactor;
+    const petrolCO2 = data.petrol * petrolFactor;
+    const dieselCO2 = data.diesel * dieselFactor;
+    const autoLpgCO2 = data.autoLpg * autoLpgFactor;
+    const taxisCO2 = data.taxis * taxiFactor;
+    const busCO2 = data.bus * busFactor;
+    const autorickshawCO2 = data.autorickshaw * autorickshawFactor;
+    const trainCO2 = data.train * trainFactor;
 
-    const totalCO2 = electricityCO2 + LPGCO2 + waterCO2 + travelCO2;
+    const totalCO2 = electricityCO2 + LPGCO2 + waterCO2 + travelCO2 + petrolCO2 + dieselCO2 + autoLpgCO2 + taxisCO2 + busCO2 + autorickshawCO2 + trainCO2;
 
     setResult({
       electricity: electricityCO2.toFixed(2),
@@ -59,6 +80,14 @@ const App = () => {
       lpg: "",
       lpgUnit: "kilograms",
       travel: "",
+      petrol: '',
+      diesel: '',
+      autoLpg: '',
+      taxis: '',
+      bus: '',
+      autorickshaw: '',
+      train: ''
+      
     });
   };
 
