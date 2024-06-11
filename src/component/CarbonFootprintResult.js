@@ -32,6 +32,28 @@ const CarbonFootprintResult = ({ result, onClose, showResult }) => {
         <p className="mb-2">
           Travel : <span className="font-bold">{result.travel} kg CO2</span>
         </p>
+       
+        <h3 className="mb-2">
+          Petrol : <span className="font-bold">{result.petrol} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          Diesel : <span className="font-bold">{result.diesel} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          AutoLPG : <span className="font-bold">{result.autoLPG} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          Taxis : <span className="font-bold">{result.taxis} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          Bus : <span className="font-bold">{result.bus} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          Autorickshaw : <span className="font-bold">{result.autorickshaw} kg CO2</span>
+        </h3>
+        <h3 className="mb-2">
+          Train : <span className="font-bold">{result.train} kg CO2</span>
+        </h3>
         <h3 className="mb-2">
           Total : <span className="font-bold">{result.total} kg CO2</span>
         </h3>
