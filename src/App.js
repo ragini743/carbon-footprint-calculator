@@ -27,7 +27,7 @@ const App = () => {
   const calculateCarbonFootprint = (data) => {
     console.log("data", data);
     const electricityFactor = 0.233; // kg CO2 per kWh
-    const gasFactor = 5.3; // kg CO2 per therm
+    
     const LPGFactorKg = 3.06;
     const LPGFactorLitre = 1.51;
 
@@ -94,7 +94,7 @@ const App = () => {
 
 
   return (
-    <div className="App md:w-[40%] mx-auto mt-16 shadow-lg border-[1px] border-gray-100 p-4">
+    <div className="App md:w-[40%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 mb-10">
       <h1 className="font-bold text-xl md:text-2xl text-center mb-4">
         Carbon Footprint Calculator
       </h1>
