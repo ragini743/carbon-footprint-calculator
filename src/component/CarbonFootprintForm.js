@@ -16,12 +16,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
 
   return (
     <form onSubmit={handleSubmit} className="my-auto">
-      <div className="md:grid md:grid-cols-2 md:items-center justify-center">
+      <div className="grid  grid-cols-1 md:grid-cols-2 md:items-center justify-center">
         <div
           className="
-        p-2 mb-2 input-container relative flex items-center "
+        p-2 mb-2 input-container relative flex items-center flex-col md:flex-row "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Electricity Usage (kWh):
           </label>
           <input
@@ -38,19 +38,20 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex  items-center "
         >
-          <label className="font-bold w-[36%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Water Usage ({formData.waterUnit}) :
           </label>
+          <div className="flex rounded-lg w-[60%] md:text-sm lg:text-[1rem]">
           <input
             placeholder="water used in a Liter or Gallons"
-            className="outline-none relative  p-2  rounded-lg w-[53%]"
+            className="outline-none relative  p-2 w-[80%] rounded-tl-lg rounded-bl-lg"
             type="number"
             name="water"
             value={formData.water}
             onChange={handleChange}
           />
           <select
-            className=" py-2 w-[11%] ml-4 flex  outline-none rounded-lg justify-end"
+            className=" py-2 w-[20%] outline-none rounded-tr-lg rounded-br-lg"
             name="waterUnit"
             value={formData.waterUnit}
             onChange={handleChange}
@@ -58,31 +59,36 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
             <option value="gallons">Gallons</option>
             <option value="liters">Liters</option>
           </select>
+          </div>
+         
         </div>
         <div
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[36%] text-center">
+          <label className="font-bold w-[36%] text-center md:text-sm lg:text-[1rem]">
             LPG ({formData.lpgUnit}) :
           </label>
+          <div className="flex rounded-lg w-[60%] ">
           <input
-            placeholder="LPG used in a Liters or kilograms"
-            className="outline-none relative  p-2  rounded-lg w-[53%]"
+            placeholder="LPG used in a Liters or kilograms "
+            className="outline-none relative  p-2 w-[80%] rounded-tl-lg rounded-bl-lg"
             type="number"
             name="lpg"
             value={formData.lpg}
             onChange={handleChange}
           />
           <select
-            className=" py-2 w-[11%] ml-4 flex  outline-none rounded-lg justify-end"
-            name="lpgUnit"
+            className=" py-2 w-[20%] outline-none rounded-tr-lg rounded-br-lg"
+            name="lpgUnit "
             value={formData.lpgUnit}
             onChange={handleChange}
           >
             <option value="kilograms">Kg</option>
             <option value="liters">Liters</option>
           </select>
+          </div>
+         
         </div>
         {/* <div
         className="
@@ -102,12 +108,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Petrol (litres):
           </label>
           <input
             placeholder="Petrol used in Litres"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="petrol"
             value={formData.petrol}
@@ -119,12 +125,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Diesel (litres):
           </label>
           <input
             placeholder="Diesel used in Litres"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="diesel"
             value={formData.diesel}
@@ -136,12 +142,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Auto LPG (kg):
           </label>
           <input
             placeholder="Auto LPG used in Kg"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="autoLpg"
             value={formData.autoLpg}
@@ -153,10 +159,10 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">Taxis (km):</label>
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">Taxis (km):</label>
           <input
             placeholder="Distance traveled by Taxis in Km"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="taxis"
             value={formData.taxis}
@@ -167,12 +173,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Local Bus (km):
           </label>
           <input
             placeholder="Distance traveled by Local Bus in Km"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="bus"
             value={formData.bus}
@@ -184,12 +190,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Autorickshaw (km):
           </label>
           <input
             placeholder="Distance traveled by Autorickshaw in Km"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="autorickshaw"
             value={formData.autorickshaw}
@@ -200,12 +206,12 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
         p-2 mb-2 input-container relative flex justify-center items-center "
         >
-          <label className="font-bold w-[40%] text-center">
+          <label className="font-bold w-[40%] text-center md:text-sm lg:text-[1rem]">
             Local Train (km):
           </label>
           <input
             placeholder="Distance traveled by Local Train in Km"
-            className="outline-none relative  p-2 w-[60%] rounded-lg"
+            className="outline-none relative  p-2 w-[60%] rounded-lg md:text-sm lg:text-[1rem]"
             type="number"
             name="train"
             value={formData.train}
@@ -213,12 +219,15 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           />
         </div>
       </div>
+      <div className="flex justify-center items-center">
       <button
         type="submit"
-        className="bg-blue-500 text-white font-bold p-2 rounded-md ml-16 mb-6"
+        className="bg-blue-500 text-white font-bold py-4 rounded-md px-8 my-6 mx-auto w-[50%]"
       >
         Calculate
       </button>
+      </div>
+ 
     </form>
   );
 };

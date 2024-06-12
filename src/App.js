@@ -63,7 +63,14 @@ const App = () => {
       electricity: electricityCO2.toFixed(2),
       lpg: LPGCO2.toFixed(2),
       water: waterCO2.toFixed(2),
-      travel: travelCO2.toFixed(2),
+    //  travel:travelCO2.toFixed(2),
+     petrol:petrolCO2.toFixed(2),
+     diesel:dieselCO2.toFixed(2),
+     autoLpg:autoLpgCO2.toFixed(2),
+     taxis:taxisCO2.toFixed(2),
+    bus :busCO2.toFixed(2),
+    train :trainCO2.toFixed(2),
+     autorickshaw:autorickshawCO2.toFixed(2),
       total: totalCO2.toFixed(2),
     });
     setShowResult(true);
@@ -94,7 +101,7 @@ const App = () => {
 
 
   return (
-    <div className="App md:w-[80%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 mb-10 relative w-[100vh] md:my-20">
+    <div className="App md:w-[100%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 pb-10  md:py-20">
       <h1 className="font-bold text-xl md:text-2xl text-center mb-4">
         Carbon Footprint Calculator
       </h1>
