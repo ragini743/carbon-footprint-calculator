@@ -94,7 +94,7 @@ const App = () => {
 
 
   return (
-    <div className="App md:w-[40%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 mb-10">
+    <div className="App md:w-[80%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 mb-10 relative w-[100vh] md:my-20">
       <h1 className="font-bold text-xl md:text-2xl text-center mb-4">
         Carbon Footprint Calculator
       </h1>
