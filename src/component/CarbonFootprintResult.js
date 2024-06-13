@@ -8,14 +8,14 @@ const CarbonFootprintResult = ({ result, onClose, showResult }) => {
       <div className="bg-gradient-to-r from-slate-500 to-gray-900 absolute z-10 top-0 bottom-0 right-0 left-0  opacity-95  overflow-hidden">
 
       </div>
-      <div className="bg-white  md:w-[40%] absolute top-1/2 overflow-y-auto   md:absolute  md:top-1/4 z-10 pb-8 shadow-2xl mx-auto left-0 right-0 p-4 md:pl-8 rounded-lg border-gray-800 ">
+      <div className="bg-white  md:w-[40%] fixed top-1/4 overflow-y-auto   md:absolute  md:top-1/4 z-10 pb-4 shadow-2xl mx-auto left-0 right-0 p-4  rounded-lg border-gray-800 ">
         <table>
-          <div className="flex md:justify-between items-center mb-4">
-            <thead className="w-[80%] md:w-[50%]">
+          <div className="flex md:justify-between items-center mb-2 md:mb-4">
+            <div className="w-[80%] md:w-[50%]">
               <h2 className="font-bold  lg:text-2xl text-center mb-4 text-[1rem]">
                 Your Carbon Footprint
               </h2>
-            </thead>
+            </div>
             <div className="w-[20%] md:w-[50%] flex justify-end">
               <div
                 className=" w-[50%] md:w-[12%]  border-2 p-2 border-gray-950 rounded-full"
@@ -68,9 +68,15 @@ const CarbonFootprintResult = ({ result, onClose, showResult }) => {
               <p className="text-sm"> Train</p>
             </div>
           </div>
+              <div className=" md:w-[50%] mt-2 rounded-lg m-auto px-2 font-bold ml-8 flex py-2 md:text-[1.5rem] text-sm items-center">
+              <p className="mr-2 ">Total : 
+              </p>
+              <p className=" font-bold bg-red-600 text-white p-2 rounded-lg">  {result.total} kg CO2</p>
+            
+            </div>
         </table>
       </div>
-      <div></div>
+  
     </div>
   );
 };

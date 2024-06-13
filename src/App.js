@@ -16,19 +16,19 @@ const App = () => {
     lpg: "",
     lpgUnit: "kilograms",
     travel: "",
-    petrol: '',
-    diesel: '',
-    autoLpg: '',
-    taxis: '',
-    bus: '',
-    autorickshaw: '',
-    train: ''
+    petrol: "",
+    diesel: "",
+    autoLpg: "",
+    taxis: "",
+    bus: "",
+    autorickshaw: "",
+    train: "",
   });
 
   const calculateCarbonFootprint = (data) => {
     console.log("data", data);
     const electricityFactor = 0.233; // kg CO2 per kWh
-    
+
     const LPGFactorKg = 3.06;
     const LPGFactorLitre = 1.51;
 
@@ -39,7 +39,7 @@ const App = () => {
     const dieselFactor = 2.68; // kg CO2 per liter
     const autoLpgFactor = 1.51; // kg CO2 per liter (assuming same as LPG)
     const taxiFactor = 0.18; // kg CO2 per km
-    const busFactor = 0.10; // kg CO2 per km
+    const busFactor = 0.1; // kg CO2 per km
     const autorickshawFactor = 0.05; // kg CO2 per km
     const trainFactor = 0.06; // kg CO2 per km
 
@@ -58,20 +58,31 @@ const App = () => {
     const autorickshawCO2 = data.autorickshaw * autorickshawFactor;
     const trainCO2 = data.train * trainFactor;
 
-    const totalCO2 = electricityCO2 + LPGCO2 + waterCO2 + travelCO2 + petrolCO2 + dieselCO2 + autoLpgCO2 + taxisCO2 + busCO2 + autorickshawCO2 + trainCO2;
+    const totalCO2 =
+      electricityCO2 +
+      LPGCO2 +
+      waterCO2 +
+      travelCO2 +
+      petrolCO2 +
+      dieselCO2 +
+      autoLpgCO2 +
+      taxisCO2 +
+      busCO2 +
+      autorickshawCO2 +
+      trainCO2;
 
     setResult({
       electricity: electricityCO2.toFixed(2),
       lpg: LPGCO2.toFixed(2),
       water: waterCO2.toFixed(2),
-    //  travel:travelCO2.toFixed(2),
-     petrol:petrolCO2.toFixed(2),
-     diesel:dieselCO2.toFixed(2),
-     autoLpg:autoLpgCO2.toFixed(2),
-     taxis:taxisCO2.toFixed(2),
-    bus :busCO2.toFixed(2),
-    train :trainCO2.toFixed(2),
-     autorickshaw:autorickshawCO2.toFixed(2),
+      //  travel:travelCO2.toFixed(2),
+      petrol: petrolCO2.toFixed(2),
+      diesel: dieselCO2.toFixed(2),
+      autoLpg: autoLpgCO2.toFixed(2),
+      taxis: taxisCO2.toFixed(2),
+      bus: busCO2.toFixed(2),
+      train: trainCO2.toFixed(2),
+      autorickshaw: autorickshawCO2.toFixed(2),
       total: totalCO2.toFixed(2),
     });
     setShowResult(true);
@@ -81,7 +92,7 @@ const App = () => {
     setShowResult(false);
     // console.log("Hello");
     setTimeout(() => {
-      formRef.current.scrollIntoView({ behavior: 'smooth' });
+      formRef.current.scrollIntoView({ behavior: "smooth" });
     }, 0);
     setFormData({
       electricity: "",
@@ -91,31 +102,27 @@ const App = () => {
       lpg: "",
       lpgUnit: "kilograms",
       travel: "",
-      petrol: '',
-      diesel: '',
-      autoLpg: '',
-      taxis: '',
-      bus: '',
-      autorickshaw: '',
-      train: ''
-      
+      petrol: "",
+      diesel: "",
+      autoLpg: "",
+      taxis: "",
+      bus: "",
+      autorickshaw: "",
+      train: "",
     });
   };
 
-
-
   return (
     <div className="App  md:w-[100%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100   md:py-20 md:h-[100vh] relative">
-   
       <div ref={formRef}>
-      <h1 className="font-bold text-xl md:text-2xl text-center mb-8 pt-8">
-        Carbon Footprint Calculator
-      </h1>
-      <CarbonFootprintForm
-        onCalculate={calculateCarbonFootprint}
-        formData={formData}
-        setFormData={setFormData}
-      />
+        <h1 className="font-bold text-xl md:text-2xl text-center mb-8 pt-8">
+          Carbon Footprint Calculator
+        </h1>
+        <CarbonFootprintForm
+          onCalculate={calculateCarbonFootprint}
+          formData={formData}
+          setFormData={setFormData}
+        />
       </div>
     
       {showResult && (

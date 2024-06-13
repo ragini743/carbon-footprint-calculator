@@ -15,14 +15,19 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="my-auto px-4 lg:w-[80%] mx-auto  md:mt-12">
+    <form
+      onSubmit={handleSubmit}
+      className="my-auto px-4 lg:w-[80%] mx-auto  md:mt-12"
+    >
       <div className="grid  grid-cols-1 md:grid-cols-2 md:items-center justify-center">
         <div
           className="
         p-2 mb-2 input-container relative flex items-center flex-col md:flex-row md:text-sm lg:text-[1rem]"
         >
-          <label className="font-bold 
-          w-[100%] mb-2 md:mb-0 md:w-[40%] md:text-center">
+          <label
+            className="font-bold 
+          w-[100%] mb-2 md:mb-0 md:w-[40%] md:text-center"
+          >
             Electricity Usage (kWh):
           </label>
           <input
@@ -35,11 +40,11 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           />
         </div>
 
-        <div
-          className="p-2 mb-2 input-container relative flex items-center flex-col md:flex-row md:text-sm lg:text-[1rem]"
-        >
-          <label className="font-bold 
-          w-[100%] mb-2 md:mb-0 md:w-[40%] md:text-center">
+        <div className="p-2 mb-2 input-container relative flex items-center flex-col md:flex-row md:text-sm lg:text-[1rem]">
+          <label
+            className="font-bold 
+          w-[100%] mb-2 md:mb-0 md:w-[40%] md:text-center"
+          >
             Water Usage ({formData.waterUnit}) :
           </label>
           <div className="flex rounded-lg w-[100%] md:w-[60%] ">
@@ -158,8 +163,10 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           className="
           p-2 mb-2 input-container relative flex items-center flex-col md:flex-row md:text-sm lg:text-[1rem] "
         >
-          <label className="font-bold w-[100%] mb-2 md:mb-0 md:w-[40%] 
-          md:text-center ">
+          <label
+            className="font-bold w-[100%] mb-2 md:mb-0 md:w-[40%] 
+          md:text-center "
+          >
             Taxis (km):
           </label>
           <input
