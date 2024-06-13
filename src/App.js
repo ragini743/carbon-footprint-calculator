@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import CarbonFootprintForm from "./component/CarbonFootprintForm";
 import CarbonFootprintResult from "./component/CarbonFootprintResult";
@@ -7,6 +7,7 @@ const App = () => {
   console.log("result,result");
   const [result, setResult] = useState(null);
   const [showResult, setShowResult] = useState(false);
+  const formRef = useRef(null);
   const [formData, setFormData] = useState({
     electricity: "",
     gas: "",
@@ -78,7 +79,10 @@ const App = () => {
 
   const handleCloseResult = () => {
     setShowResult(false);
-    console.log("Hello");
+    // console.log("Hello");
+    setTimeout(() => {
+      formRef.current.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
     setFormData({
       electricity: "",
       gas: "",
@@ -101,8 +105,10 @@ const App = () => {
 
 
   return (
-    <div className="App md:w-[100%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100 pb-10  md:py-20">
-      <h1 className="font-bold text-xl md:text-2xl text-center mb-4">
+    <div className="App  md:w-[100%] mx-auto pt-16 shadow-lg border-[1px] border-gray-400  bg-green-100   md:py-20 md:h-[100vh] relative">
+   
+      <div ref={formRef}>
+      <h1 className="font-bold text-xl md:text-2xl text-center mb-8 pt-8">
         Carbon Footprint Calculator
       </h1>
       <CarbonFootprintForm
@@ -110,6 +116,8 @@ const App = () => {
         formData={formData}
         setFormData={setFormData}
       />
+      </div>
+    
       {showResult && (
         <CarbonFootprintResult
           result={result}

@@ -15,7 +15,7 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="my-auto px-4 lg:w-[80%] mx-auto">
+    <form onSubmit={handleSubmit} className="my-auto px-4 lg:w-[80%] mx-auto  md:mt-12">
       <div className="grid  grid-cols-1 md:grid-cols-2 md:items-center justify-center">
         <div
           className="
@@ -221,7 +221,7 @@ const CarbonFootprintForm = ({ onCalculate, formData, setFormData }) => {
           />
         </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center md:mt-12">
         <button
           type="submit"
           className="bg-blue-500 text-white font-bold py-4 rounded-md px-8 my-6 mx-auto w-[50%] lg:w-[30%]"
